@@ -89,6 +89,8 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
+// console.log('develop')
+
 app.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);
 })
