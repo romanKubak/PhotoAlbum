@@ -33,6 +33,11 @@ const sessionConfig = {
   },
 };
 
+// регистрация
+app.get('/register', (req, res) => {
+  res.render('register');
+});
+
 // Сообщаем express, что в качестве шаблонизатора используется "hbs".
 app.set('view engine', 'hbs');
 // Сообщаем express, что шаблона шаблонизаторая (вью) находятся в папке "ПапкаПроекта/views".
