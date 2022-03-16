@@ -1,11 +1,18 @@
-<div class="-photo-container">
-  {{#each allPhotos}}
-          <div id="{{this.id}}" class="js-meal">
-            <div class="photo">
-            <h2>{{this.title}}</h3>
-            <img style="height: 200px; width: 200px" src="{{this.photo}}" alt=""><br>
-            <p>{{this.body}}</p>
-            </div>
-          </div>
-          {{/each}}
-        </div>
+{{#if isAuthor}}
+  <div class="-photo-container">
+    <div class="authorAlbum"><h3>Автор этого альбома: {{authorAlbum.login}}</h3></div>
+    {{#each allPhotos}}
+    <div id="{{id}}" class="js-meal">
+      <div class="photo">
+        <h2>{{title}}</h3>
+          <img style="height: 200px; width: 200px" src="{{photo}}" alt=""><br>
+          <p>{{body}}</p>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+{{/if}}
+{{#unless isAuthor}}
+  <h3>Это не ваш альбом</h3>
+  <h4>Владелец {{authorAlbum.login}}</h4>
+{{/unless}}
