@@ -1,0 +1,45 @@
+<main class="main">
+  <div class="content-container">
+    {{!-- {{#if superuser}} --}}
+    <div class="author-albums">
+    {{!-- <h3>Привет, {{superuser}}!</h3> --}}
+    {{!-- {{#each authorAlbums}} --}}
+      <div class="name-album">
+        {{!-- <h3>{{title}}</h3> --}}
+        <div class="preview-album">
+          {{!-- должно лежать фото --}}
+        </div>
+      </div>
+    {{!-- {{/each}} --}}
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="all-albums">
+    <h3>Альбомы других пользователей</h3>
+      {{!-- {{#each allAlbums}} --}}
+        <div class="name-album">
+        <div class="preview-album">
+            {{!-- должно лежать фото --}}
+        </div>
+      </div>
+      {{!-- {{/each}} --}}
+    </div>
+    {{!-- {{/if}} --}}
+    {{!-- {{#unless superuser}} --}}
+      <h3>Привет, чтоб просмотреть записи <a href="/login">Войдите</a> или <a href="/registration">Зарегистрируйтесь</a></h3>
+      
+      <br/>
+      <br/>
+      <br/>
+      <div>
+        <div>
+          {{!-- какой-то background --}}
+        </div>
+      </div>
+    {{!-- {{/unless}} --}}
+  </div>
+
+</main>
