@@ -11,7 +11,7 @@ const { get } = require('express/lib/response');
 const FileStore = require('session-file-store')(session);
 
 // Импортируем созданный в отдельный файлах рутеры.
-// const indexRouter = require('./routes/index');
+const albumsRouter = require('./routes/albums');
 // const entriesRouter = require('./routes/entries');
 // const usersRouter = require('./routes/users');
 
@@ -60,7 +60,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Указываем пути:
-// app.use('/', indexRouter);
+app.use('/', albumsRouter);
 // app.use('/', usersRouter);
 // app.use('/entries', entriesRouter);
 
