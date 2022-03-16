@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <title>Album Maker</title>
 </head>
 
@@ -12,7 +13,8 @@
   <header role="banner" class="mar-t-5 pad-t-2 pad-b-4 pad-s-1 wrap-float bg-white">
     <div class="max-w-700 center wrap-float">
       <nav class="clearfix mar-b-1">
-        <div class="myMenu" style="display: flex; flex-flow: row nowrap; justify-content: space-evenly; padding: 9px 5px;">
+        <div class="myMenu"
+          style="display: flex; flex-flow: row nowrap; justify-content: space-evenly; padding: 9px 5px;">
           <ul class="no-bullets no-margin no-padding right">
             <li class="pipe-separate t-light-green left"><a href="/">Главня</a></li>
           </ul>
@@ -24,7 +26,7 @@
             <li class="pipe-separate t-light-green left"><a href="/registration">Регистрация</a></li>
           </ul>
           {{/unless}}
-          {{#if superuser}} 
+          {{#if superuser}}
           <ul class="no-bullets no-margin no-padding right">
             <li class="pipe-separate t-light-green left"><a href="/myPost">Мои альбомы</a></li>
           </ul>
@@ -37,7 +39,8 @@
     </div>
   </header>
   <div class="box">
-{{{body}}}
+    {{{body}}}
   </div>
 </body>
+
 </html>
