@@ -6,6 +6,7 @@ const logger = require('morgan');
 const path = require('path');
 const session = require('express-session');
 const { get } = require('express/lib/response');
+const { Router } = require('express');
 
 // подключем session-file-store // Предварительно установив библиотеку - npm i session-file-store
 const FileStore = require('session-file-store')(session);
@@ -14,7 +15,7 @@ const FileStore = require('session-file-store')(session);
 // const indexRouter = require('./routes/index');
 // const entriesRouter = require('./routes/entries');
 // const usersRouter = require('./routes/users');
-
+const usersRouter = require('./routes/users');
 // Импортируем middleware:
 // const { superUserName } = require('./middleware/common')
 
@@ -33,10 +34,6 @@ const sessionConfig = {
   },
 };
 
-// регистрация
-app.get('/register', (req, res) => {
-  res.render('register');
-});
 
 // Сообщаем express, что в качестве шаблонизатора используется "hbs".
 app.set('view engine', 'hbs');
@@ -63,7 +60,7 @@ app.use(express.json());
 // app.use('/', indexRouter);
 // app.use('/', usersRouter);
 // app.use('/entries', entriesRouter);
-
+app.use('/', usersRouter);
 // Если HTTP-запрос дошёл до этой строчки, значит ни один из ранее встречаемых рутов не ответил на запрос. Это значит, что искомого раздела просто нет на сайте. Для таких ситуаций используется код ошибки 404. Создаём небольшое middleware, которое генерирует соответствующую ошибку.
 app.use((req, res, next) => {
   const error = createError(404, 'Запрашиваемой страницы не существует на сервере.');
