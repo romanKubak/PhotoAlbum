@@ -5,8 +5,6 @@ const createError = require('http-errors');
 const logger = require('morgan');
 const path = require('path');
 const session = require('express-session');
-const { get } = require('express/lib/response');
-const { Router } = require('express');
 
 // подключем session-file-store // Предварительно установив библиотеку - npm i session-file-store
 const FileStore = require('session-file-store')(session);
@@ -95,5 +93,5 @@ app.use(function (err, req, res, next) {
 
 app.listen(PORT, () => {
   console.log(`server started PORT: ${PORT}`);
-})
+});
 
