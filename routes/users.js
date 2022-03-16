@@ -2,6 +2,9 @@ const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const { User } = require('../db/models');
 
+// Подключаю контролеры
+const { logOut } =  require('../controlers/usersControlers')
+
 router.get('/registration', (req, res) => {
   res.render('users/registration');
 });
@@ -29,10 +32,10 @@ router.post('/registration', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-  // const err = document.querySelector('passError');
   const { login, password } = req.body;
   // console.log(req.body)
   const user = await User.findOne({ where: { login } });
+  // req.session.superuser = login
   // console.log(user);
   let passwordCheck;
   if (user !== null) {
@@ -48,5 +51,7 @@ router.post('/login', async (req, res) => {
     console.log('\n=======   неверный пароль   =======\n');
   }
 });
+
+router.get('/loguot', logOut);
 
 module.exports = router;
