@@ -14,8 +14,9 @@ const albumsRouter = require('./routes/albums');
 // const entriesRouter = require('./routes/entries');
 // const usersRouter = require('./routes/users');
 const usersRouter = require('./routes/users');
+
 // Импортируем middleware:
-// const { superUserName } = require('./middleware/common')
+const { superUserName } = require('./middleware/common')
 
 const app = express();
 
@@ -45,7 +46,7 @@ app.use(logger('dev'));
 app.use(session(sessionConfig));
 
 // Подключаем middleware
-// app.use(superUserName);
+app.use(superUserName);
 
 // Подключаем middleware, которое сообщает epxress, что в папке "ПапкаПроекта/public" будут находится статические файлы, т.е. файлы доступные для скачивания из других приложений.
 app.use(express.static(path.join(__dirname, 'public')));
