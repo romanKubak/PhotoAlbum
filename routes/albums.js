@@ -1,10 +1,12 @@
 const router = require('express').Router();
-// const { Album, User, Photo, Admission } = require('../db/models/');
+const { Album, User, Photo, Admission } = require('../db/models/');
 
 router.get('/', async (req, res) => {
   let authorAlbums;
   let allAlbums;
-  const author = await User.findOne({where: {userName: req.session.superuser}});
+  // const author = await User.findOne({where: {login: req.session.superuser}});
+  const author = await User.findOne({where: {login: 'Loh'}});
+
   const idAuthor = author.dataValues.id;
   // console.log(author)
   try {

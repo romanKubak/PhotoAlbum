@@ -1,6 +1,6 @@
 <div class="-photo-container">
   {{#each allPhotos}}
-          <div data-mealid="{{this.id}}" class="js-meal">
+          <div id="{{this.id}}" class="js-meal">
             <div class="photo">
             <h2>{{this.title}}</h3>
             <img style="height: 200px; width: 200px" src="{{this.photo}}" alt=""><br>
@@ -8,4 +8,4 @@
             </div>
           </div>
           {{/each}}
-</div>
+        </div>
