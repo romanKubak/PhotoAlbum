@@ -16,22 +16,22 @@
           <ul class="no-bullets no-margin no-padding right">
             <li class="pipe-separate t-light-green left"><a href="/">Главня</a></li>
           </ul>
-          {{!-- {{#unless superuser}} --}}
+          {{#unless superuser}}
           <ul class="no-bullets no-margin no-padding right">
             <li class="pipe-separate t-light-green left"><a href="/login">Войти</a></li>
           </ul>
           <ul class="no-bullets no-margin no-padding right">
             <li class="pipe-separate t-light-green left"><a href="/registration">Регистрация</a></li>
           </ul>
-          {{!-- {{/unless}} --}}
-          {{!-- {{#if superuser}}  --}}
+          {{/unless}}
+          {{#if superuser}} 
           <ul class="no-bullets no-margin no-padding right">
             <li class="pipe-separate t-light-green left"><a href="/myPost">Мои альбомы</a></li>
           </ul>
           <ul class="no-bullets no-margin no-padding right">
             <li class="pipe-separate t-light-green left"><a href="/loguot">Выйти</a></li>
           </ul>
-          {{!-- {{/if}} --}}
+          {{/if}}
         </div>
       </nav>
     </div>
