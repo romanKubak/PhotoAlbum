@@ -1,21 +1,24 @@
 <script src="routes/users.js"></script>
-<form method="POST" action="login">
+<div class="divik2">
+  <span class="one"></span>
+  <span  class="two"></span>
+  <span  class="three"></span>
+  <span  class="four"></span>
+ </div>
+<form id="logbody" method="POST" action="login">
+  <h1 class="vxodacc">Вход в аккаунт</h1>
   <div class="container">
-    <h1>Вход в аккаунт</h1>
+    
     <hr>
-    {{!-- <h4 id="err" style="visibility: hidden; color:red">Неправильный логин или пароль</h4> --}}
-    <label><b>Имя пользователя</b></label>
-    <input type="text" placeholder="Имя пользователя" name="login" required>
-    {{!-- <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Введите Email" name="email" required> --}}
-    <label for="psw"><b>Пароль</b></label>
-    <input type="password" placeholder="Введите пароль" name="password" required>
-    {{!-- <label for="psw-repeat"><b>Повторите пароль</b></label>
-    <input type="password" placeholder="Повторите пароль" name="psw-repeat" required> --}}
-    <hr>
-    <button type="submit" class="registerbtn">Войти</button>
+    <input class="inplog" type="text" placeholder="Имя пользователя" name="login" required>
+    <hr class="reghr">
+    <input class="inplog" type="password" placeholder="Введите пароль" name="password" required>
+    <hr class="reghr">
+    <button type="submit" class="glow-button">Войти</button>
+    <a href="registration"><button type="button" class="glow-button">Зарегистрироваться</button></a>
+    
   </div>
   <div class="container signin">
-    <p>У вас нет аккаунта? <a href="registration">Зарегистрироваться</a>.</p>
+    
   </div>
 </form>
