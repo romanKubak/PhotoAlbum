@@ -1,16 +1,16 @@
 {{#if superuser}}
 <script defer src="/js/uploadAlbumPh.js"></script>
 <main class="main">
+      <h3 class="sUser">Привет, {{superuser}}!</h3>
   <div class="content-container">
     <div class="author-albums">
 
-      <h3 class="sUser">Привет, {{superuser}}!</h3>
 
       {{#each authorAlbums}}
       <div id="{{id}}" class="name-album">
         <h3>{{title}}</h3>
         <div class="preview-album" onclick="location.href='http://localhost:3000/album/{{id}}';">
-          <img src="{{photo}}" alt="anyPhoto" width="300px" height="300px">
+          <img src="{{photo}}" alt="anyPhoto" class="albumImg">
         </div>
       </div>
       {{/each}}
