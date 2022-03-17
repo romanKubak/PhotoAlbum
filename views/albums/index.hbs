@@ -3,9 +3,11 @@
 <main class="main">
   <div class="content-container">
     <div class="author-albums">
+
       <h3>Привет, {{superuser}}!</h3>
 
       <form id="formFetch" method="POST" action="/upload" enctype="multipart/form-data">
+
         <div class="container">
           <h1>Добавление альбома</h1>
           <hr>
@@ -61,17 +63,18 @@
 {{#unless superuser}}
 <main class="main">
   <div class="content-container">
-    <h3>Привет, чтоб просмотреть записи <a href="/login">Войдите</a> или <a href="/registration">Зарегистрируйтесь</a>
-    </h3>
-
-    <br />
-    <br />
-    <br />
-    <div>
-      <div>
-        {{!-- какой-то background --}}
-      </div>
+    <p class="mainDone">Для продолжения требуется авторизация</p> 
     </div>
-  </div>
+    <a class="floating-button" href="/login">Войти</a>
+    <a class="floating-button" href="/registration">Зарегистрироваться</a>
+    
+  
+  <div class="divik">
+  <span class="one"></span>
+  <span class="two"></span>
+  <span class="three"></span>
+  <span class="four"></span>
+ </div>
 </main>
+
 {{/unless}}
