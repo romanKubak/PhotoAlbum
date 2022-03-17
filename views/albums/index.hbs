@@ -4,7 +4,7 @@
   <div class="content-container">
     <div class="author-albums">
 
-      <h3>Привет, {{superuser}}!</h3>
+      <h3 class="sUser">Привет, {{superuser}}!</h3>
 
       {{#each authorAlbums}}
       <div id="{{id}}" class="name-album">
@@ -39,7 +39,7 @@
 {{#unless superuser}}
 <main class="main">
   <div class="content-container">
-    <p class="mainDone">Для продолжения требуется авторизация</p> 
+    <p class="mainDone">Для продолжения <br> требуется авторизация</p> 
     </div>
     <a class="floating-button" href="/login">Войти</a>
     <a class="floating-button" href="/registration">Зарегистрироваться</a>
@@ -47,9 +47,9 @@
   
   <div class="divik">
   <span class="one"></span>
-  <span class="two"></span>
-  <span class="three"></span>
-  <span class="four"></span>
+  <span  class="two"></span>
+  <span  class="three"></span>
+  <span  class="four"></span>
  </div>
 </main>
 

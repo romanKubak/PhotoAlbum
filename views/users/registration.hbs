@@ -1,19 +1,23 @@
-<form method="POST" action="registration">
+<div class="divik2">
+  <span class="one"></span>
+  <span  class="two"></span>
+  <span  class="three"></span>
+  <span  class="four"></span>
+ </div>
+<form id="logbody" method="POST" action="registration">
+    <h1 class="vxodacc">Регистрация</h1>
   <div class="container">
-    <h1>Регистрация</h1>
     <hr>
-    <label><b>Имя пользователя</b></label>
-    <input type="text" placeholder="Имя пользователя" name="login" required>
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Введите Email" name="email" required>
-    <label for="psw"><b>Пароль</b></label>
-    <input type="password" placeholder="Введите пароль" name="password" required>
-    {{!-- <label for="psw-repeat"><b>Повторите пароль</b></label>
-    <input type="password" placeholder="Повторите пароль" name="pswRepeat" required> --}}
-    <hr>
-    <button type="click" class="registerbtn">Зарегистрироваться</button>
+    <input class="inplog" type="text" placeholder="Имя пользователя" name="login" required>
+    <hr class="reghr">
+    <input class="inplog" type="text" placeholder="Введите Email" name="email" required>
+    <hr class="reghr">
+    <input class="inplog" type="password" placeholder="Введите пароль" name="password" required>
+    <hr class="reghr">
+    <button type="click" class="glow-button">Зарегистрироваться</button>
   </div>
   <div class="container signin">
-    <p>Уже есть аккаунт? <a href="login">Войти</a>.</p>
+    <p class="notacc">Уже есть аккаунт? </p> 
+    <a href="login"><button type="button" class="glow-button">Войти</button></a>
   </div>
 </form>
