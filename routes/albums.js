@@ -3,8 +3,9 @@ const upload = require('../middleware/uploadAlbum')
 console.log('upload ===> ', upload)
 // Импортирую контролеры для работы роутеров
 const { showAlbums, photoOnAlbum, create, showMyAlbums } = require('../controlers/albumsControler');
+const {showaccessAlbumId} = require('../controlers/accessmentControler')
 
-router.get('/', showAlbums);
+router.get('/', showaccessAlbumId);
 
 router.get('/album/:id', photoOnAlbum);
 
