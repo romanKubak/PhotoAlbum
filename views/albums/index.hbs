@@ -6,30 +6,6 @@
 
       <h3>Привет, {{superuser}}!</h3>
 
-      <form id="formFetch" method="POST" action="/upload" enctype="multipart/form-data">
-
-        <div class="container">
-          <h1>Добавление альбома</h1>
-          <hr>
-          <br>
-          <br>
-          <label><b>Название альбома</b></label>
-          <input type="text" placeholder="Название альбома" name="title" required>
-          <br>
-          <br>
-          <label for="title"><b>Описание:</b></label>
-          <input type="text" placeholder="Описание альбома" name="body" required>
-          <br>
-          <br>
-          <label for="psw"><b>Выберете фото для загрузки</b></label>
-          <input type="file" name="images">
-          <br>
-          <br>
-          <button type="submit" class="registerbtn">Добавить</button>
-          <hr>
-        </div>
-      </form>
-
       {{#each authorAlbums}}
       <div id="{{id}}" class="name-album">
         <h3>{{title}}</h3>

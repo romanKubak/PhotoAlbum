@@ -25,12 +25,13 @@ async function showAlbums(req, res) {
 async function photoOnAlbum(req, res) {
   let allPhotos;
   let isAuthor;
-  let authorAlbum
+  let authorAlbum;
+  let thisAlbum;
   // console.log('req.params.id ===> ', req.params.id)
   if(req.session.superuser) {
     try {
-      allPhotos = await Photo.findAll({where: { album_id: req.params.id}})
-      const thisAlbum = await Album.findOne({where: {id: req.params.id}})
+      allPhotos = await Photo.findAll({where: { album_id: req.params.id}, order:[['id', 'DESC']]})
+      thisAlbum = await Album.findOne({where: {id: req.params.id}})
       authorAlbum = await User.findOne({ where: {id: thisAlbum.user_id}});
       const superuser = await User.findOne({where: {login: req.session.superuser}})
       isAuthor = thisAlbum.user_id === superuser.id
@@ -43,7 +44,7 @@ async function photoOnAlbum(req, res) {
       error: {}
     });
     }
-  return res.render('albums/photos', {allPhotos, isAuthor, authorAlbum})
+  return res.render('albums/photos', {allPhotos, isAuthor, authorAlbum, thisAlbum})
   } else {
     res.render('users/login')
   }
@@ -68,5 +69,21 @@ async function create(req,res) {
     console.log(error)
   } 
 }
+async function showMyAlbums(req, res) {
+  let authorAlbums;
+  // console.log('req.session.superuser ====>', req.session.superuser);
+  if(req.session.superuser) {
+    const author = await User.findOne({where: {login: req.session.superuser}});
+    const idAuthor = author.dataValues.id;
+    try {
+      authorAlbums = await Album.findAll({where: {user_id: idAuthor}}, {order:[['id', 'DESC']]});
+    } catch (error) {
+      res.render('error', { error: error.message });
+    }
+    return res.render('albums/myAlbums', { authorAlbums });
+  } else {
+    return res.render('albums/index');
+  }
+}
 
-module.exports = { showAlbums, photoOnAlbum, create }
+module.exports = { showAlbums, photoOnAlbum, create, showMyAlbums }
