@@ -1,6 +1,31 @@
 {{#if isAuthor}}
   <div class="-photo-container">
     <div class="authorAlbum"><h3>Автор этого альбома: {{authorAlbum.login}}</h3></div>
+
+     <form id="formFetch" method="POST" action="/uploadPhoto/{{thisAlbum.id}}" enctype="multipart/form-data">
+
+        <div class="container">
+          <h1>Добавление фото</h1>
+          <hr>
+          <br>
+          <br>
+          <label><b>Название:</b></label>
+          <input type="text" placeholder="Название фото" name="title" required>
+          <br>
+          <br>
+          <label for="title"><b>Описание:</b></label>
+          <input type="text" placeholder="Описание фото" name="body" required>
+          <br>
+          <br>
+          <label for="psw"><b>Выберете фото для загрузки</b></label>
+          <input type="file" name="images">
+          <br>
+          <br>
+          <button type="submit" class="registerbtn">Добавить</button>
+          <hr>
+        </div>
+      </form>
+
     {{#each allPhotos}}
     <div id="{{id}}" class="js-meal">
       <div class="photo">

@@ -12,7 +12,7 @@ const FileStore = require('session-file-store')(session);
 // Импортируем созданный в отдельный файлах рутеры.
 const albumsRouter = require('./routes/albums');
 const usersRouter = require('./routes/users');
-const uploadsPhAlbum = require('./routes/uploadsPhAlbum')
+const photosRouter = require('./routes/photos')
 
 // Импортируем middleware:
 const { superUserName } = require('./middleware/common')
@@ -57,7 +57,7 @@ app.use(express.json());
 // Указываем пути:
 app.use('/', usersRouter);
 app.use('/', albumsRouter);
-app.use('/', uploadsPhAlbum);
+app.use('/', photosRouter);
 
 // Если HTTP-запрос дошёл до этой строчки, значит ни один из ранее встречаемых рутов не ответил на запрос. Это значит, что искомого раздела просто нет на сайте. Для таких ситуаций используется код ошибки 404. Создаём небольшое middleware, которое генерирует соответствующую ошибку.
 app.use((req, res, next) => {

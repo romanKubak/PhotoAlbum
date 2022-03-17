@@ -23,7 +23,7 @@ const upload = multer({
     }
     cb('Give proper files formate to upload');
   },
-}).array('images', 5);
+}).array('images', 1);
 
 module.exports = upload;
 // module.exports = multer({ storage, fileFilter, limits, message })
