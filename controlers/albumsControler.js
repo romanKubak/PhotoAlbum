@@ -86,4 +86,17 @@ async function showMyAlbums(req, res) {
   }
 }
 
-module.exports = { showAlbums, photoOnAlbum, create, showMyAlbums }
+async function addAdmission(req,res) {
+  const { userLogin, albumId } = req.body;
+  const userID = await User.findOne({where: {login: userLogin}})
+  console.log('userLogin, albumId ===>',userLogin, albumId)
+  const newAdmission = await Admission.create({user_id: userID.id, album_id: albumId})
+  try{
+    // await newAdmission.save();
+    res.json(newAdmission);
+  } catch {
+    console.log(error)
+  } 
+}
+
+module.exports = { showAlbums, photoOnAlbum, create, showMyAlbums, addAdmission }
