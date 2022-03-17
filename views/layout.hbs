@@ -4,32 +4,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <link rel="stylesheet" href="style.css">
   <title>Album Maker</title>
 </head>
 
-<body>
-  <header role="banner" class="mar-t-5 pad-t-2 pad-b-4 pad-s-1 wrap-float bg-white">
+<body class="body2">
+  <header role="banner" class="mar-t-5 pad-t-2 pad-b-4 pad-s-1 wrap-float bg-white" id="header">
     <div class="max-w-700 center wrap-float">
       <nav class="clearfix mar-b-1">
-        <div class="myMenu" style="display: flex; flex-flow: row nowrap; justify-content: space-evenly; padding: 9px 5px;">
+        <div id="myMenu" class="myMenu" style="display: flex; flex-flow: row nowrap; justify-content: space-evenly; padding: 9px 5px;">
           <ul class="no-bullets no-margin no-padding right">
-            <li class="pipe-separate t-light-green left"><a href="/">Главня</a></li>
-          </ul>
+           <a href="/">Главная</a> <!</li>          </ul>
           {{#unless superuser}}
           <ul class="no-bullets no-margin no-padding right">
-            <li class="pipe-separate t-light-green left"><a href="/login">Войти</a></li>
+            <a href="/login">Войти</a>
           </ul>
           <ul class="no-bullets no-margin no-padding right">
-            <li class="pipe-separate t-light-green left"><a href="/registration">Регистрация</a></li>
+            <a href="/registration">Регистрация</a>
           </ul>
           {{/unless}}
           {{#if superuser}} 
           <ul class="no-bullets no-margin no-padding right">
-            <li class="pipe-separate t-light-green left"><a href="/myPost">Мои альбомы</a></li>
+           <a href="/myPost">Мои альбомы</a>
           </ul>
           <ul class="no-bullets no-margin no-padding right">
-            <li class="pipe-separate t-light-green left"><a href="/loguot">Выйти</a></li>
+           <a href="/loguot">Выйти</a>
           </ul>
           {{/if}}
         </div>

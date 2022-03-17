@@ -1,0 +1,30 @@
+body{
+    background: rgba(2, 10, 0, 0.719);
+}
+
+.button {
+    height: 60px;
+    margin: 30px 0;
+    position: relative;
+    width: 200px;
+  }
+
+.box{  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#header{
+    font-size: 35px;;
+   font-family: 'Times New Roman', Times, serif;
+}
+
+.content-container{
+    color:gold;
+}
+
+#myMenu{
+    color: gold;
+}
