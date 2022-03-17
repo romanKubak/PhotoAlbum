@@ -10,8 +10,9 @@ async function showAlbums(req, res) {
     try {
       authorAlbums = await Album.findAll({where: {user_id: idAuthor}}, {order:[['id', 'DESC']]});
       // console.log('authorAlbums ===> ', authorAlbums)
-      // проверить работоспособность !idAuthor
       allAlbums = await Album.findAll({}, {order:[['id', 'DESC']]}); 
+      allAlbums = allAlbums.filter(el => el.user_id !== idAuthor)
+      // console.log('allAlbums ===> ', allAlbums)
     } catch (error) {
       res.render('error', { error: error.message });
     }

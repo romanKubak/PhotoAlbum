@@ -5,10 +5,19 @@ async function logOut(req, res) {
   if(req.session.superuser) {
     await req.session.destroy();
     res.clearCookie('MyCookieName');
-    res.redirect('/login');
+    return res.redirect('/login');
   } else {
-    res.redirect('/');
+    return res.redirect('/');
   }
 }
 
-module.exports = { logOut }
+async function registration(req, res) {
+  const { login, email, password } = req.body;
+  // console.log('req.body ======> ', req.body);
+  const hash = await bcrypt.hash(password, 10);
+  const user = await User.create({ login, email, password: hash });
+  req.session.superuser = user.dataValues.login;
+  return res.redirect('/');
+}
+
+module.exports = { logOut, registration }
