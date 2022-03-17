@@ -64,7 +64,7 @@ async function create(req,res) {
   })
   try{
     await newAlbum.save();
-    res.redirect('/')
+    res.redirect('/myPost')
   } catch {
     console.log(error)
   } 
@@ -76,7 +76,7 @@ async function showMyAlbums(req, res) {
     const author = await User.findOne({where: {login: req.session.superuser}});
     const idAuthor = author.dataValues.id;
     try {
-      authorAlbums = await Album.findAll({where: {user_id: idAuthor}}, {order:[['id', 'DESC']]});
+      authorAlbums = await Album.findAll({where: {user_id: idAuthor}, order:[['id', 'DESC']]});
     } catch (error) {
       res.render('error', { error: error.message });
     }

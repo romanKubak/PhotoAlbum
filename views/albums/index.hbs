@@ -22,7 +22,7 @@
 
     <div class="all-albums">
       <h3>Альбомы других пользователей</h3>
-      {{#each allAlbums}}
+      {{#each accessAlbum}}
       <div id="{{id}}" class="name-album">
         <h3>{{title}}</h3>
         <div class="preview-album" onclick="location.href='http://localhost:3000/album/{{id}}';">
