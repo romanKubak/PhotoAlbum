@@ -49,4 +49,24 @@ async function photoOnAlbum(req, res) {
   }
 }
 
-module.exports = { showAlbums, photoOnAlbum }
+async function create(req,res) {
+  // console.log('\n req.session.superuser ===>\n', req.session.superuser)
+  const author = await User.findOne({where: {login: req.session.superuser}})
+  // console.log('\n req.files[0].path ===>\n', req.files[0].path)
+  let path = req.files[0].path
+  path = path.slice(6,path.length)
+  const newAlbum = new Album({
+    title: req.body.title,
+    body: req.body.body,
+    photo: req.files ? path : '',
+    user_id: author.id
+  })
+  try{
+    await newAlbum.save();
+    res.redirect('/')
+  } catch {
+    console.log(error)
+  } 
+}
+
+module.exports = { showAlbums, photoOnAlbum, create }
