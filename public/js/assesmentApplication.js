@@ -11,24 +11,25 @@ console.log('Привет из публика!');
 // * 8 Распарсить (обработать) ответ +
 // * 9 Как то обновить DOM
 
-const formFetch = document.getElementById('formFetch');
-// console.log('formFetch ==> ', formFetch)
+const formFetch = document.getElementById('formPrivat');
+console.log('formFetch ==> ', formFetch)
 
-// formFetch.addEventListener('submit', async (e) => {
-//   e.preventDefault();
+formFetch.addEventListener('submit', async (e) => {
+  e.preventDefault();
 
-//   const title = e.target.title.value;
-//   const body = e.target.body.value;
-//   const addPhoto = e.target
-//   if (title && body) {
-//     const response = await fetch('/upload', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify({ title, body, addPhoto}),
-//     });
-//   }
-//   // console.log('title ==>', title)
-//   console.log('addPhoto ==>', addPhoto)
-// });
+  const userLogin = e.target.userLogin.value;
+  const albumId = e.target.name
+  // console.log('albumId ==>', albumId)
+  if (userLogin) {
+    const response = await fetch('/addAdmission', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ userLogin, albumId }),
+    });
+    const result = await response.json();
+    console.log('result ==>', result)
+  }
+  
+});
