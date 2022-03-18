@@ -1,33 +1,36 @@
 {{#if superuser}}
 <script defer src="/js/uploadAlbumPh.js"></script>
-<main class="main">
+<div class="divik2">
+  <span class="one"></span>
+  <span  class="two"></span>
+  <span  class="three"></span>
+  <span  class="four"></span>
+ </div>
+<main id="logbody" class="main">
   <div class="content-container">
-    <div class="author-albums">
+    <div class="author-albums2">
       
-      <h3>Мои альбомы</h3>
       <form id="formFetch" method="POST" action="/upload" enctype="multipart/form-data">
 
-        <div class="container">
-          <h1>Добавление альбома</h1>
+        <div class="container2">
+          <h1 class="addAl">Добавление альбома</h1>
           <hr>
           <label for="psw"><b>Выбрать фото для заставки</b></label>
-          <input type="file" name="images">
+          <hr >
+          <div class="file"> <input type="file" name="images"></div>
+          <hr class="reghr">
+          <input class="inplog" style="color: black;" type="text" placeholder="Название" name="title" required>
+          <hr class="reghr">
+          <input class="inplog" type="text" placeholder="Описание" name="body" required>
+          <hr class="reghr">
           <br>
           <br>
-
-          <input type="text" placeholder="Название" name="title" required>
-          <br>
-          <br>
-
-          <input type="text" placeholder="Описание" name="body" required>
-          <br>
-          <br>
-          <br>
-          <br>
-          <button type="submit" class="registerbtn">Добавить</button>
+          <button type="submit" class="shine-button">Добавить</button>
           <hr>
         </div>
       </form>
+  <br>
+  <h3 class="myAtext">Мои альбомы</h3>
 
       {{#each authorAlbums}}
       <div id="{{id}}" class="name-album">
