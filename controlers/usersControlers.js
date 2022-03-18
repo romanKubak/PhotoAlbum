@@ -5,7 +5,7 @@ async function logOut(req, res) {
   if(req.session.superuser) {
     await req.session.destroy();
     res.clearCookie('MyCookieName');
-    return res.redirect('/login');
+    return res.redirect('/registration');
   } else {
     return res.redirect('/');
   }
