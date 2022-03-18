@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleR.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
@@ -20,14 +21,14 @@
          
           <ul class="no-bullets no-margin no-padding right">
            <a class="double-border-button" href="/">Главная</a></ul>
-          {{#unless superuser}}
+          {{!-- {{#unless superuser}}
           <ul class="no-bullets no-margin no-padding right">
             <a class="double-border-button" href="/login">Войти</a>
           </ul>
           <ul class="no-bullets no-margin no-padding right">
             <a class="double-border-button" href="/registration">Регистрация</a>
           </ul>
-          {{/unless}}
+          {{/unless}} --}}
           {{#if superuser}}
           <ul class="no-bullets no-margin no-padding right">
            <a class="double-border-button" href="/myPost">Мои альбомы</a>
