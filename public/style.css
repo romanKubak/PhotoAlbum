@@ -539,3 +539,36 @@
     left: 150px;
     transition: .5s ease-in-out;
   }
+
+
+  /* Фотографии */ 
+.-photo-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.photos{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+  .js-meal{
+    display: flex;
+    width: 600px;
+    height: auto;
+    background-color: white;
+    margin: 15px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+  .photo{
+    width: 450px;
+    height: auto;
+    border-radius: 20px;
+  }
