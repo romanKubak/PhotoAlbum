@@ -1,22 +1,41 @@
 {{#if superuser}}
 <script defer src="/js/uploadAlbumPh.js"></script>
+<script defer src="/js/formShow.js"></script>
+
 <div class="divik2">
   <span class="one"></span>
-  <span  class="two"></span>
-  <span  class="three"></span>
-  <span  class="four"></span>
- </div>
+  <span class="two"></span>
+  <span class="three"></span>
+  <span class="four"></span>
+</div>
 <main id="logbody" class="main">
+  <button class="open-button" onclick="openForm()">Добавить альбом</button>
+  <div class="form-popup" id="myForm">
+    <form id="formFetch" method="POST" action="/upload" enctype="multipart/form-data" class="form-container">
+      {{!-- <h1>Логин</h1> --}}
+
+      <label for="psw"><b>Выбрать фото для заставки</b></label>
+      <br>
+      <br>
+      <div class="file"> <input type="file" name="images"></div>
+
+      <input class="inplog" style="color: black;" type="text" placeholder="Название" name="title" required>
+      <input class="inplog" type="text" placeholder="Описание" name="body" required>
+
+      <button type="submit" class="btn">Добавить</button>
+      <button type="submit" class="btn cancel" onclick="closeForm()">Закрыть</button>
+    </form>
+  </div>
   <div class="content-container">
     <div class="author-albums2">
-      
-      <form id="formFetch" method="POST" action="/upload" enctype="multipart/form-data">
+
+      {{!-- <form id="formFetch" method="POST" action="/upload" enctype="multipart/form-data">
 
         <div class="container2">
           <h1 class="addAl">Добавление альбома</h1>
           <hr>
           <label for="psw"><b>Выбрать фото для заставки</b></label>
-          <hr >
+          <hr>
           <div class="file"> <input type="file" name="images"></div>
           <hr class="reghr">
           <input class="inplog" style="color: black;" type="text" placeholder="Название" name="title" required>
@@ -28,9 +47,9 @@
           <button type="submit" class="shine-button">Добавить</button>
           <hr>
         </div>
-      </form>
-  <br>
-  <h3 class="myAtext">Мои альбомы</h3>
+      </form> --}}
+      <br>
+      <h3 class="myAtext">Мои альбомы</h3>
 
       {{#each authorAlbums}}
       <div id="{{id}}" class="name-album">
