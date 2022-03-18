@@ -44,16 +44,20 @@
       <hr>
     </div>
   </form>
-
+<div class="photos">
   {{#each allPhotos}}
-  <div id="{{id}}" class="js-meal">
+  
+    <div id="{{id}}" class="js-meal">
     <div class="photo">
-      <h2>{{title}}</h3>
-        <img style="height: 200px; width: 200px" src="{{photo}}" alt=""><br>
+      <h2>{{title}}</h2>
+        <img class="photo" src="{{photo}}" alt=""><br>
         <p>{{body}}</p>
     </div>
+  </div> 
+   {{/each}}
   </div>
-  {{/each}}
+  
+ 
 </div>
 {{/if}}
 {{#unless isAuthor}}
