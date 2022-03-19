@@ -1,67 +1,78 @@
 {{#if isAuthor}}
 <script defer src="/js/assesmentApplication.js"></script>
+<script defer src="/js/formShow.js"></script>
+<script defer src="/js/privatAddForms.js"></script>
 <main class="main">
-<div class="-photo-container">
-  <div class="authorAlbum">
-    <h3>Автор этого альбома: {{authorAlbum.login}}</h3>
+  {{!-- Форма Добавления Фото --}}
+  <button class="open-button" onclick="openForm()">Добавить фото</button>
+  <div class="form-popup" id="myForm">
+    <form id="formAddPhoto" method="POST" action="/uploadPhoto/{{thisAlbum.id}}" enctype="multipart/form-data"
+      class="form-container">
+
+      <label for="psw"><b>Добавить фото</b></label>
+      <br>
+      <br>
+      <div class="file"> <input type="file" name="images"></div>
+
+      <input class="inplog" style="color: black;" type="text" placeholder="Название" name="title" required>
+      <input class="inplog" type="text" placeholder="Описание" name="body" required>
+
+      <button type="submit" class="btn">Добавить фото</button>
+      <button type="submit" class="btn cancel" onclick="closeForm()">Закрыть</button>
+    </form>
   </div>
 
-  <form id="formAddPhoto" method="POST" action="/uploadPhoto/{{thisAlbum.id}}" enctype="multipart/form-data">
-    <div class="container">
-      <h1>Добавление фото</h1>
-      <hr>
-      <br>
-      <br>
-      <label><b>Название:</b></label>
-      <input type="text" placeholder="Название фото" name="title" required>
-      <br>
-      <br>
-      <label for="title"><b>Описание:</b></label>
-      <input type="text" placeholder="Описание фото" name="body" required>
-      <br>
-      <br>
-      <label for="psw"><b>Выберете фото для загрузки</b></label>
-      <input type="file" name="images">
-      <br>
-      <br>
-      <button type="submit" class="registerbtn">Добавить</button>
-      <hr>
-    </div>
-  </form>
+  {{!-- Форма приватности --}}
+  <button class="open-button R" onclick="openForm2()">Приватность</button>
+  <div class="form-popup R" id="myFormR">
+    <form id="formPrivat" name="{{thisAlbum.id}}" class="form-container R">
 
-  <hr>
+      <label for="psw"><b>Разрешить просмотр альбома</b></label>
+      <br>
+      <br>
+      <input class="inplog R" style="color: black;" type="text" placeholder="Логин" name="userLogin" required>
+      <button type="submit" class="btn R registerbtn">Сохранить</button>
+      <button type="submit" class="btn cancel R" onclick="closeForm2()">Закрыть</button>
+    </form>
+  </div>
 
-  <form id="formPrivat" name="{{thisAlbum.id}}">
-    <div class="container">
-      <h1>Разрешение на просмотр альбома</h1>
-      <hr>
-      <br>
-      <br>
-      <input class="inputAddAdmission" type="text" placeholder="Логин пользователя" name="userLogin" required>
-      <br>
-      <br>
-      <button type="submit" class="registerbtn">Добавить</button>
-      <hr>
+  <div class="-photo-container">
+    <div class="authorAlbum">
+      <h3>Автор этого альбома: {{authorAlbum.login}}</h3>
     </div>
-  </form>
-<div class="photos">
-  {{#each allPhotos}}
-  
+
+    <hr>
+    <div class="photos">
+      {{#each allPhotos}}
+
+      <div id="{{id}}" class="js-meal">
+        <div class="photo">
+          <h2>{{title}}</h2>
+          <img class="photo" src="{{photo}}" alt=""><br>
+          <p>{{body}}</p>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+
+  </div>
+  {{/if}}
+  {{#unless isAuthor}}
+  <h3>Это не ваш альбом</h3>
+  <br>
+  <h4>Владелец {{authorAlbum.login}}</h4>
+  <div class="photos">
+    {{#each allPhotos}}
+
     <div id="{{id}}" class="js-meal">
-    <div class="photo">
-      <h2>{{title}}</h2>
+      <div class="photo">
+        <h2>{{title}}</h2>
         <img class="photo" src="{{photo}}" alt=""><br>
         <p>{{body}}</p>
+      </div>
     </div>
-  </div> 
-   {{/each}}
+    {{/each}}
   </div>
-  
- 
-</div>
-{{/if}}
-{{#unless isAuthor}}
-<h3>Это не ваш альбом</h3>
-<h4>Владелец {{authorAlbum.login}}</h4>
-{{/unless}}
+  {{/unless}}
 </main>

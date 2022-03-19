@@ -444,13 +444,21 @@
   
 
   /* Альбом */ 
+  .h3RK {
+    font-size: 200%;
+    font-family: Trebuchet MS;
+    color: antiquewhite;
+    border: 8px #444;
+    text-shadow: black 0 0 10px;
 
+  }
   .albumImg{
-    width: 399px;
-    height: 399px;
-    padding: 4px;
+    width: 419px;
+    height: 419px;
+    /* padding: 4px; */
     border-radius: 20px;
     opacity: 100%;
+    background: linear-gradient(332deg, rgb(0 0 0) 35%, rgb(0 0 0) 100%);
   }
 .albumImg:hover{
     /* opacity: 70%; */
@@ -459,19 +467,17 @@
 
 .name-album{
   border: 10px;
-  padding: 1px;
-  /* background-image: url(/photo/ramka2.png); */
-  background: linear-gradient(181deg, rgb(255 255 255) 35%, rgb(255 234 210) 100%);
+  background: linear-gradient(181deg, rgb(255 255 255) 35%, rgb(216 216 216) 100%);
   border-radius: 20px;
   border-color: #1cb678;
-  margin: 19px;
+  margin: 20px;
   width: 419px;
-  height: 506px;
+  height: 493px;
   align-items: center;
+  color: rgb(0, 0, 0);
 }
 
 .name-album:hover{
-    opacity: 80%;
     box-shadow: 0px 2px 19px 11px rgba(0, 0, 0, 0.3);
     cursor: pointer;
 }
@@ -556,19 +562,26 @@
 }
   .js-meal{
     display: flex;
-    width: 600px;
-    height: auto;
+    width: 27%;
+    /* height: 20%; */
     background-color: white;
     margin: 15px;
     border-radius: 20px;
     align-items: center;
     justify-content: center;
     text-align: center;
-
+    font-size: 10px;
+    background: linear-gradient(181deg, rgb(255 255 255) 35%, rgb(216 216 216) 100%);
+    color: black;
 }
 
   .photo{
-    width: 450px;
-    height: auto;
+    width: 98%;
     border-radius: 20px;
   }
+
+ul {
+  list-style: none;
+  /* margin: 0; */
+  padding: 0;
+}

@@ -30,6 +30,7 @@ formFetch.addEventListener('submit', async (e) => {
     });
     const result = await response.json();
     console.log('result ==>', result)
+    
   }
   
 });
