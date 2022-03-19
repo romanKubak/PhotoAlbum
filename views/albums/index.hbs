@@ -2,12 +2,12 @@
 <script defer src="/js/uploadAlbumPh.js"></script>
 <div class="divik2">
   <span class="one"></span>
-  <span  class="two"></span>
-  <span  class="three"></span>
-  <span  class="four"></span>
- </div>
+  <span class="two"></span>
+  <span class="three"></span>
+  <span class="four"></span>
+</div>
 <main id="logbody" class="main">
-      <h3 class="sUser">Привет, {{superuser}}!</h3>
+  <h3 class="sUser">Привет, {{superuser}}!</h3>
   <div class="content-container">
     <div class="author-albums">
 
@@ -16,7 +16,9 @@
       <div id="{{id}}" class="name-album">
         <h3>{{title}}</h3>
         <div class="preview-album" onclick="location.href='http://localhost:3000/album/{{id}}';">
-          <img src="{{photo}}" alt="anyPhoto" class="albumImg">
+          <div class="imgRK">
+            <img src="{{photo}}" alt="anyPhoto" class="albumImg">
+          </div>
         </div>
       </div>
       {{/each}}
@@ -26,7 +28,7 @@
     <hr>
     <br>
 
-    <div class="all-albums">
+    <div class="author-albums">
       <h3>Альбомы других пользователей</h3>
       {{#each accessAlbum}}
       <div id="{{id}}" class="name-album">
@@ -45,18 +47,18 @@
 {{#unless superuser}}
 <main class="main">
   <div class="content-container">
-    <p class="mainDone">Для продолжения <br> требуется авторизация</p> 
-    </div>
-    {{!-- <a class="floating-button" href="/login">Войти</a> --}}
-    <a class="floating-button" href="/registration">Авторизоваться</a>
-    
-  
+    <p class="mainDone">Для продолжения <br> требуется авторизация</p>
+  </div>
+  {{!-- <a class="floating-button" href="/login">Войти</a> --}}
+  <a class="floating-button" href="/registration">Авторизоваться</a>
+
+
   <div class="divik">
-  <span class="one"></span>
-  <span  class="two"></span>
-  <span  class="three"></span>
-  <span  class="four"></span>
- </div>
+    <span class="one"></span>
+    <span class="two"></span>
+    <span class="three"></span>
+    <span class="four"></span>
+  </div>
 </main>
 
 {{/unless}}

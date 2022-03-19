@@ -22,12 +22,12 @@
       <input class="inplog" style="color: black;" type="text" placeholder="Название" name="title" required>
       <input class="inplog" type="text" placeholder="Описание" name="body" required>
 
-      <button type="submit" class="btn">Добавить</button>
+      <button type="submit" class="btn" onclick="closeForm()">Добавить</button>
       <button type="submit" class="btn cancel" onclick="closeForm()">Закрыть</button>
     </form>
   </div>
   <div class="content-container">
-    <div class="author-albums2">
+    <div class="author-albums">
 
       {{!-- <form id="formFetch" method="POST" action="/upload" enctype="multipart/form-data">
 
@@ -52,10 +52,12 @@
       <h3 class="myAtext">Мои альбомы</h3>
 
       {{#each authorAlbums}}
-      <div id="{{id}}" class="name-album">
+      <div id="{{id}}" class="name-album" style="background-image: url({{photo}});">
+        <div class="h3RK">
         <h3>{{title}}</h3>
-        <div class="preview-album" onclick="location.href='http://localhost:3000/album/{{id}}';">
-          <img src="{{photo}}" alt="anyPhoto" width="300px" height="300px">
+        </div>
+        {{!-- <div class="preview-album" onclick="location.href='http://localhost:3000/album/{{id}}';"> --}}
+          {{!-- <img src="{{photo}}" alt="anyPhoto" class="albumImg"> --}}
         </div>
       </div>
       {{/each}}
